@@ -1,13 +1,13 @@
 {
-  "name": "week8_1",
+  "name": "after-school",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "Sai Neeti Sayam",
   "license": "ISC",
-  "description": "",
+  "description": "After School Lesson App",
   "dependencies": {
     "express": "^5.1.0",
     "mongodb": "^3.6.3"
