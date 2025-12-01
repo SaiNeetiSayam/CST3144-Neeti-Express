@@ -1,12 +1,23 @@
 //REST APIs for managing AfterSchool Database in MongoDB Atlas
 // Import dependencies modules
 const express = require('express');
+const cors = require("cors");
+const path = require('path');
 
 // Create an Express.js instance
 const app = express();
 
 //Express Initialization
 app.use(express.json());
+app.use(cors()); // allow all origins
+
+// Absolute path to client folder
+const clientPath = path.join(__dirname, '../CST3144-Neeti-Vue');
+
+// Serve it as static
+app.use(express.static(clientPath));
+
+app.use(express.static('assets')); // <-- expose the assets folder to client
 
 // connect to MongoDB
 const MongoClient = require('mongodb').MongoClient;

@@ -9,7 +9,10 @@
   "license": "ISC",
   "description": "After School Lesson App",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
-    "mongodb": "^3.6.3"
+    "fs": "^0.0.1-security",
+    "mongodb": "^3.6.3",
+    "path": "^0.12.7"
   }
 }
