@@ -100,4 +100,5 @@ const port = process.env.PORT || 3000;
 // Initialize server
 app.listen(port, () => {
     console.log('Express.js server is running on localhost:3000');
+    console.log('Client Path = ', clientPath);
 });
