@@ -42,11 +42,6 @@ app.get('/', function(request, response) {
     response.send('Select a collection, e.g. /collection/messages');
 });
 
-app.get("/config", (req, res) => {
-  const baseUrl = process.env.RENDER_EXTERNAL_URL || "http://localhost:3000";
-  res.json({ baseUrl });
-});
-
 // Get collection name
 app.param('collectionName', (request, response, next, collectionName) => {
     request.collection = db.collection(collectionName);
