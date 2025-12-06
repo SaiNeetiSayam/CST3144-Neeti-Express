@@ -78,10 +78,12 @@ app.put('/collection/:collectionName/:id', (request, response, next) => {
     request.collection.updateOne(
     {_id: new ObjectID(request.params.id)},
     {$set: request.body},
-    {safe: true, multi: true}, 
     (e, result) => {
         if (e) return next (e)
-        response.send((result.result.n === 1) ? {msg: 'success'} : {msg: 'error'});
+        //response.send((result.result.n === 1) ? {msg: 'success'} : {msg: 'error'}); //this is possible returning HTML from Render. Instead make sure to return JSON
+        response.json({
+            msg: result.result.n === 1 ? 'success' : 'error'
+        });    
     });
 });
 
