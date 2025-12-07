@@ -14,10 +14,11 @@ app.use(cors()); // allow all origins
 // Absolute path to client folder
 const clientPath = path.join(__dirname, '../CST3144-Neeti-Vue');
 
-// Serve it as static
+// Serve it as static path within the web service
 app.use(express.static(clientPath));
 
-app.use(express.static('assets')); // <-- expose the assets folder to client
+// <-- expose the assets folder to the client so that images are accessible by client
+app.use(express.static('assets')); 
 
 // connect to MongoDB
 const MongoClient = require('mongodb').MongoClient;
